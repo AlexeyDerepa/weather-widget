@@ -36,7 +36,7 @@ function bodyMiddleware({ getState }) {
             }
 
             case types.DELETE_TAB: {
-                let tabsList = getState().tabsReducer.tabsList.filter(item => item.id !== action.payload.id)
+                let tabsList = deleteTabFromTabsList(getState().tabsReducer, action);//  getState().tabsReducer.tabsList.filter(item => item.id !== action.payload.id)
                 let active = activeTab(getState().tabsReducer, action)
                 updateLocalStorage('tabsList', tabsList);
                 updateLocalStorage('currentActiveTab', active)
