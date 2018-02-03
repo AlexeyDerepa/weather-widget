@@ -3,7 +3,7 @@ import TabItem from './TabItem';
 import  './style.css';
 
 const TabsList = ({ tabsList, currentActiveTab, handlerChooseTab, handlerDeleteTab }) => {
-console.log(currentActiveTab)
+//console.log(currentActiveTab)
     const list = tabsList.map((tab) => (
         <TabItem
             key={tab.id}

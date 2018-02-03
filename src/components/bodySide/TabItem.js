@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TabItem = ({ tab, currentActiveTab, handlerChooseTab, handlerDeleteTab }) => {
-  console.log(tab, currentActiveTab  === tab.id);
+  //console.log(tab, currentActiveTab  === tab.id);
   return (
     <div className={!(currentActiveTab  === tab.id)?'main-tab-item-container':'main-tab-item-container active-tab'}>
       <div className="main-tab-item">

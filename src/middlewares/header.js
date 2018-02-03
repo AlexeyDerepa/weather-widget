@@ -4,13 +4,14 @@ import { dataLoaded } from '../actions/header'
 function headerMiddleware({ getState }) {
     return next => action => {
         switch (action.type) {
-            case types.FIND_CITY:
-                loadWeatherByCityNameRequest(action.payload)
-                    .then(response => next(dataLoaded(response)))
-                    .catch(e => console.error(e))
-
+            case types.FIND_CITY: {
+                loadWeatherByCityName(action.payload, next);
                 break;
-
+            }
+            case types.ACTIVE_TAB: {
+                loadWeatherByCityName(action.payload.name, next);
+                break;
+            }
             default:
                 break;
         }
@@ -19,6 +20,10 @@ function headerMiddleware({ getState }) {
     }
 }
 
-
+const loadWeatherByCityName = (cityName, next) => {
+    return loadWeatherByCityNameRequest(cityName)
+        .then(response => next(dataLoaded(response)))
+        .catch(e => console.error(e))
+}
 
 export default headerMiddleware;

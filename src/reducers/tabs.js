@@ -1,4 +1,5 @@
 import * as types from '../actions/ActionTypes';
+import updateTabsList, {deleteTabFromTabsList, activeTab}from '../addition';
 
 let initialState = {
     tabsList: [],
@@ -11,18 +12,17 @@ function tabsReducer(state = initialState, action) {
     switch (action.type) {
 
         case types.DATA_LOADED:
-            let newTab = state.tabsList.find(item => item.id === action.payload.id);
             return updateObject(state, {
-                tabsList: !!newTab ? state.tabsList : state.tabsList.concat(action.payload),
+                tabsList: updateTabsList(state, action),
                 currentActiveTab: action.payload.id,
                 details: action.payload
             });
 
         case types.DELETE_TAB:
             return updateObject(state, {
-                tabsList: state.tabsList.filter(item => item.id !== action.payload.id),
-                currentActiveTab: null,
-                details: null
+                tabsList: deleteTabFromTabsList(state, action),
+                currentActiveTab: activeTab(state, action),
+                details: state.currentActiveTab === action.payload.id? null: state.details,
             });
 
         case types.ACTIVE_TAB:
@@ -30,6 +30,13 @@ function tabsReducer(state = initialState, action) {
             return updateObject(state, {
                 details: tab,
                 currentActiveTab: tab.id,
+            });
+
+        case types.DATA_INITIALIZED:
+            return updateObject(state, {
+                tabsList: action.payload.tabsList,
+                currentActiveTab: action.payload.currentActiveTab,
+                details: action.payload.tabsList.find(item => item.id === action.payload.currentActiveTab)
             });
 
         default:

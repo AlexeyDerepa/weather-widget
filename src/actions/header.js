@@ -13,3 +13,10 @@ export const dataLoaded = (data) => {
         payload: data
     }
 };
+
+export const  dataInitialized = (data) => {
+    return {
+        type: types.DATA_INITIALIZED,
+        payload: data
+    }
+};

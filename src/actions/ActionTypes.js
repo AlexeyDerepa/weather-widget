@@ -6,4 +6,7 @@ export const DATA_LOADED = 'DATA_LOADED';
 
 export const DELETE_TAB = 'DELETE_CITY';
 export const ACTIVE_TAB = 'ACTIVE_TAB';
+export const GET_INITIAL_DATA = 'GET_INITIAL_DATA';
+export const DATA_INITIALIZED = 'DATA_INITIALIZED';
+
 

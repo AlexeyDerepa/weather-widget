@@ -12,4 +12,9 @@ export const deleteTab = (tab) => {
         payload: tab
     }
 };
+export const getInitialData = () => {
+    return {
+        type: types.GET_INITIAL_DATA
+    }
+};
 
