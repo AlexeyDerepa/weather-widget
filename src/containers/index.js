@@ -6,10 +6,10 @@ import BodySide from '../components/bodySide';
 class MainPage extends Component {
     render() {
       return (
-        <Fragment>
+        <div className='main-container-for-header-body'>
             <HeaderSide/>
             <BodySide/>
-        </Fragment>
+        </div>
       );
     }
   }

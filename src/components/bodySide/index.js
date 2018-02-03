@@ -3,10 +3,12 @@ import TabsList from './TabList';
 import Details from './Details';
 import { connect } from 'react-redux';
 import { deleteTab, chooseTab, getInitialData } from '../../actions/tabs';
+import '../../assets/styles/tabs.css';
+import '../../assets/styles/details.css';
 
 class BodySide extends Component {
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.getInitialData();
     }
     handlerChooseTab = (tab) => {
@@ -20,20 +22,24 @@ class BodySide extends Component {
     render() {
         return (
             <Fragment>
-                <TabsList
-                    handlerChooseTab={this.handlerChooseTab}
-                    handlerDeleteTab={this.handlerDeleteTab}
-                    tabsList={this.props.tabsList}
-                    currentActiveTab={this.props.currentActiveTab}
-                />
-                {
-                    this.props.details
-                        ? (
-                            <Details details={this.props.details} />
-                        ) : (
-                            null
-                        )
-                }
+                <div className="tabs-list-container">
+                    <TabsList
+                        handlerChooseTab={this.handlerChooseTab}
+                        handlerDeleteTab={this.handlerDeleteTab}
+                        tabsList={this.props.tabsList}
+                        currentActiveTab={this.props.currentActiveTab}
+                    />
+                </div>
+                <div className='details-container'>
+                    {
+                        this.props.details
+                            ? (
+                                <Details details={this.props.details} />
+                            ) : (
+                                null
+                            )
+                    }
+                </div>
             </Fragment>
         );
     }

@@ -1,0 +1,16 @@
+.header-container{
+    height: 7vh;
+    margin: 0;
+    width: 100%;
+    background: rgb(221, 217, 235);
+
+}
+
+.form-input{
+    /* width: 30%; */
+    margin: auto auto;
+    position: relative;
+    top: 45%;
+    left: 45%;
+    /* padding: 22px; */
+}
