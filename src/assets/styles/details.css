@@ -1,5 +1,5 @@
 .details-container{
-    width: 90%; 
-    float: right; 
+    width: calc(100% - 200px); 
+    float: left; 
     /* margin-left: 5px; */
 }

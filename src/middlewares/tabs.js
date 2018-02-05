@@ -8,7 +8,6 @@ import updateTabsList, { deleteTabFromTabsList, activeTab } from '../addition';
 
 function bodyMiddleware({ getState }) {
     return next => action => {
-        console.log(getState().tabsReducer);
         switch (action.type) {
 
             case types.GET_INITIAL_DATA: {
@@ -36,7 +35,7 @@ function bodyMiddleware({ getState }) {
             }
 
             case types.DELETE_TAB: {
-                let tabsList = deleteTabFromTabsList(getState().tabsReducer, action);//  getState().tabsReducer.tabsList.filter(item => item.id !== action.payload.id)
+                let tabsList = deleteTabFromTabsList(getState().tabsReducer, action);
                 let active = activeTab(getState().tabsReducer, action)
                 updateLocalStorage('tabsList', tabsList);
                 updateLocalStorage('currentActiveTab', active)

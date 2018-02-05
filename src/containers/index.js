@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 
 import HeaderSide from '../components/headerSide';
 import BodySide from '../components/bodySide';

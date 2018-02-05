@@ -4,14 +4,18 @@ import { findCity } from '../../actions/header';
 import '../../assets/styles/header.css';
 
 class HeaderSide extends Component {
-    state = {
-        cityName: '',
+    constructor(props) {
+        super(props);
+        this.state = {
+            cityName: '',
+        }
     }
 
-    handlerOnChange = (event) => {
+
+    handlerOnChange(event) {
         this.setState({ cityName: event.target.value });
     }
-    handlerOnClick = () => {
+    handlerOnClick(){
         this.props.findCity(this.state.cityName);
         this.setState({ cityName: '' });
     }
@@ -19,8 +23,8 @@ class HeaderSide extends Component {
         return (
             <div className='header-container'>
                 <div className='form-input'>
-                    <input type='text' placeholder='enter city name' onChange={this.handlerOnChange} value={this.state.cityName} />
-                    <input type='button' onClick={this.handlerOnClick} value='Go' />
+                    <input type='text' placeholder='enter city name' onChange={this.handlerOnChange.bind(this)} value={this.state.cityName} />
+                    <input type='button' onClick={this.handlerOnClick.bind(this)} value='Go' />
                 </div>
             </div>
         );

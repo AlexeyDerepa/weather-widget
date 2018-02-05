@@ -11,11 +11,11 @@ class BodySide extends Component {
     componentDidMount() {
         this.props.getInitialData();
     }
-    handlerChooseTab = (tab) => {
+    handlerChooseTab(tab){
         this.props.chooseTab(tab);
     }
 
-    handlerDeleteTab = (tab) => {
+    handlerDeleteTab(tab){
         this.props.deleteTab(tab);
     }
 
@@ -24,8 +24,8 @@ class BodySide extends Component {
             <Fragment>
                 <div className="tabs-list-container">
                     <TabsList
-                        handlerChooseTab={this.handlerChooseTab}
-                        handlerDeleteTab={this.handlerDeleteTab}
+                        handlerChooseTab={this.handlerChooseTab.bind(this)}
+                        handlerDeleteTab={this.handlerDeleteTab.bind(this)}
                         tabsList={this.props.tabsList}
                         currentActiveTab={this.props.currentActiveTab}
                     />
