@@ -4,7 +4,6 @@ import { Tabs, Tab } from 'material-ui/Tabs';
 
 
 const Details = ({ details }) => {
-
   let convertObject = () => {
     let jeneral = {};
     let newDetails = {};

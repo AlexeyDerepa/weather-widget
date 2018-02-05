@@ -2,7 +2,6 @@ import React from 'react';
 import TabItem from './TabItem';
 
 const TabsList = ({ tabsList, currentActiveTab, handlerChooseTab, handlerDeleteTab }) => {
-    //console.log(currentActiveTab)
     const list = tabsList.map((tab) => (
         <TabItem
             key={tab.id}

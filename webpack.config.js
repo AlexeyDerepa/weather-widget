@@ -57,12 +57,22 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+		new webpack.NamedModulesPlugin(),
     new ExtractTextPlugin("styles.css"),
     new HtmlWebpackPlugin({
       title: 'Weather Widget',
-      //template: './public/index.1.html',
+      template: './src/assets/index.html',
       inject: "body",
       filename: path.resolve(__dirname, 'dist','index.html'),
   })
-  ]
+  ],
+	devServer: {
+		contentBase: path.resolve(__dirname, './dist'),
+		port: 8088,
+		historyApiFallback: true,
+		inline: true,
+		hot: true,
+		host: '0.0.0.0'
+	}
 };

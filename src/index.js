@@ -9,10 +9,6 @@ import './assets/styles/main.css';
 import store from './store';
 import Start from './containers';
 
-let rootElement = document.createElement('div');
-rootElement.setAttribute('id','root2');
-document.body.appendChild(rootElement);
-
 
 ReactDOM.render(
     <Provider store={store}>
@@ -20,4 +16,4 @@ ReactDOM.render(
             <Start />
         </MuiThemeProvider>
     </Provider>
-    , document.getElementById('root2'));
+    , document.getElementById('root'));

@@ -15,7 +15,8 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "build_app": "node_modules/.bin/webpack --config webpack.config.js"
+    "build_app": "node_modules/.bin/webpack --config webpack.config.js",
+    "start": "node_modules/.bin/webpack-dev-server  --progress --colors"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
