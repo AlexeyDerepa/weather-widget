@@ -1,5 +1,5 @@
-import * as types from '../actions/ActionTypes';
-import { dataInitialized } from '../actions/header';
+import * as types from 'actions/ActionTypes';
+import { dataInitialized } from 'actions/header';
 import data from './initialData';
 import updateTabsList, { deleteTabFromTabsList, activeTab } from '../addition';
 

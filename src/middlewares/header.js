@@ -1,6 +1,6 @@
-import * as types from '../actions/ActionTypes';
+import * as types from 'actions/ActionTypes';
 import { loadWeatherByCityNameRequest } from '../api';
-import { dataLoaded } from '../actions/header';
+import { dataLoaded } from 'actions/header';
 
 function headerMiddleware({ getState }) {
     return next => action => {

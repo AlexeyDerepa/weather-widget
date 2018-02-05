@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { findCity } from '../../actions/header';
-import '../../assets/styles/header.css';
+import { findCity } from 'actions/header';
+import 'assets/styles/header.css';
 
 class HeaderSide extends Component {
     constructor(props) {

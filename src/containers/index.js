@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
-import HeaderSide from '../components/headerSide';
-import BodySide from '../components/bodySide';
+import HeaderSide from 'components/headerSide';
+import BodySide from 'components/bodySide';
 
 class MainPage extends Component {
     render() {

@@ -2,9 +2,9 @@ import React, { Component, Fragment } from 'react';
 import TabsList from './TabList';
 import Details from './Details';
 import { connect } from 'react-redux';
-import { deleteTab, chooseTab, getInitialData } from '../../actions/tabs';
-import '../../assets/styles/tabs.css';
-import '../../assets/styles/details.css';
+import { deleteTab, chooseTab, getInitialData } from 'actions/tabs';
+import 'assets/styles/tabs.css';
+import 'assets/styles/details.css';
 
 class BodySide extends Component {
 
