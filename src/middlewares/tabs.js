@@ -16,7 +16,7 @@ function bodyMiddleware({ getState }) {
 
                 let localData = { tabsList: tabsList, currentActiveTab: currentActiveTab };
 
-                if (!tabsList/* || tabsList.length === 0*/) {
+                if (!tabsList) {
                     currentActiveTab = 5808453;
                     updateLocalStorage('tabsList', data);
                     updateLocalStorage('currentActiveTab', currentActiveTab);
