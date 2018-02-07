@@ -1,36 +1,34 @@
 import React from 'react';
 import { Tabs, Tab } from 'material-ui/Tabs';
 
-
-
 const Details = ({ details }) => {
   let convertObject = () => {
-    let jeneral = {};
+    let general = {};
     let newDetails = {};
     Object.keys(details).map(key => {
       if (typeof (details[key]) === 'object') {
         newDetails[key] = details[key];
       } else {
-        jeneral[key] = details[key]
+        general[key] = details[key]
       }
       return true;
     });
-    newDetails.jeneral = jeneral
+    newDetails.general = general
     return newDetails;
   }
 
-  let some = convertObject();
+  let newDetails = convertObject();
 
   let listTabs = <Tabs>
     {
-      Object.keys(some).map((keyTabName, index) => <Tab key={keyTabName} label={keyTabName} >
+      Object.keys(newDetails).map((keyTabName, index) => <Tab key={keyTabName} label={keyTabName} >
         <div>
           <ul key={[keyTabName] + index + "_ul"}>
-            {Object.keys(some[keyTabName]).map(underKey => {
-              let alias = some[keyTabName][underKey];
+            {Object.keys(newDetails[keyTabName]).map(underKey => {
+              let alias = newDetails[keyTabName][underKey];
 
-              if (Array.isArray(some[keyTabName])) {
-                return <li key={alias.id + '_some_li'}> ID {alias.id} <ul>
+              if (Array.isArray(newDetails[keyTabName])) {
+                return <li key={alias.id + '_newDetails_li'}> ID {alias.id} <ul>
                   {Object.keys(alias).map(uniqKey => <li key={uniqKey + alias[uniqKey] + ''}>{uniqKey}: {alias[uniqKey]}</li>)}
                 </ul></li>
               } else {
